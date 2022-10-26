@@ -1,6 +1,6 @@
 import { N2, N3 } from "../enums/enums";
 
-export const obtainOptions = (selected, action) => {
+export const getOptions = (selected, action) => {
     let data = [];
     switch (action) {
         case 1:
