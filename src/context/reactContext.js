@@ -21,8 +21,8 @@ const ContextProvider = (props) => {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(state);
         createFile(state);
+        clearForm();
     }
     
       function handleInputChange(e) {
@@ -32,6 +32,19 @@ const ContextProvider = (props) => {
         })
     }
 
+    const clearForm = () => {
+        setState({
+            title:'',
+            area:'',
+            sede:'',
+            n1:'',
+            n2:'',
+            n3:'',
+            year:'',
+            expiration:'',
+            observation:'',
+        })
+    }
 
     return(
         <Context.Provider value={{

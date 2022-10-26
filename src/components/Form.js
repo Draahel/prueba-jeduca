@@ -17,21 +17,24 @@ export const Form = () => {
         <div className='container'>
         <h2>Creacion de formulario</h2>
         <form action="" onSubmit={handleSubmit} className="row g-3">
+
             <div className="col-md-6">
                 <label className="form-label">Titulo</label>
-                <input type="text" name='title' className="form-control" onChange={handleInputChange} />
+                <input type="text" name='title' className="form-control" value={state.title} onChange={handleInputChange} />
             </div>
 
             <div className="col-md-3">
                 <label className="form-label">Area</label>
-                <select name='area' className='form-select' onChange={handleInputChange} >
+                <select name='area' className='form-select' onChange={handleInputChange} defaultValue={"-1"}>
+                <option value="-1">--Seleccione--</option>
                 { AREAS.map( (area ,index) => <option key={index}>{ area }</option>) }
                 </select>
             </div>
 
             <div className='col-md-3'>
                 <label className="form-label">Sede</label>
-                <select name='sede' className='form-select' onChange={handleInputChange} >
+                <select name='sede' className='form-select' onChange={handleInputChange} value={state.n1}>
+                <option value="-1">--Seleccione--</option>
                 { SEDES.map( (sede ,index) => <option key={index}>{ sede }</option>) }
                 </select>
             </div>
@@ -64,17 +67,17 @@ export const Form = () => {
 
             <div className='col-md-6'>
                 <label className="form-label">Fecha</label>
-                <input name='year' className='form-control' type="date" onChange={handleInputChange}/>
+                <input name='year' value={state.year} className='form-control' type="date" onChange={handleInputChange}/>
             </div>
 
             <div className='col-md-6'>
                 <label className="form-label">Fecha de vencimiento</label>
-                <input name='expiration' className='form-control' type="date" onChange={handleInputChange}/>
+                <input name='expiration' value={state.expiration} className='form-control' type="date" onChange={handleInputChange}/>
             </div>
 
             <div>
                 <label className="form-label">Observacion</label>
-                <textarea name='observation' className='form-control' cols={30} rows={10} placeholder="Observaciones: " onChange={handleInputChange}></textarea>
+                <textarea name='observation' value={state.observation} className='form-control' cols={30} rows={10} placeholder="Observaciones: " onChange={handleInputChange}></textarea>
             </div>
 
             <div className='d-grid gap-2 col-6 mx-auto'>
